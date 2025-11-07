@@ -124,11 +124,66 @@
 						</div>
 						</article>
 						<!-- Work -->
+							<!-- Projects -->
 							<article id="work">
-								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
-								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
-								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+							<h2 class="major">Projects</h2>
+							<p>Selected turbine refurbishing case studies—click for details</p>
+							<div class="row">
+								<div class="6u">
+								<a href="#" class="image fit thumb project-card" onclick="openModal('project1')">
+									<img src="images/pic02.jpg" alt="Blade Refurb Project" /> <!-- Replace with your thumb -->
+								</a>
+								<h3>Turbine Blade Refurbishment</h3>
+								<p>Reverse-engineered worn blades using MetraSCAN; redesigned in NX CAD for 15% flow improvement.</p>
+								</div>
+								<div class="6u">
+								<a href="#" class="image fit thumb project-card" onclick="openModal('project2')">
+									<img src="images/pic03.jpg" alt="Component Optimization" />
+								</a>
+								<h3>Component Reverse-Engineering</h3>
+								<p>PMI analysis on high-wear parts; modeled in PTC Creo for prototype fabrication, reducing downtime by 20%.</p>
+								</div>
+								<div class="6u">
+								<a href="#" class="image fit thumb project-card" onclick="openModal('project3')">
+									<img src="images/pic04.jpg" alt="Assembly Optimization" /> <!-- Add more thumbs to images/ -->
+								</a>
+								<h3>Assembly Optimization</h3>
+								<p>Bore gauge measurements informed Solidworks sims; optimized turbine assembly for 10% vibration reduction.</p>
+								</div>
+								<!-- Add more cards as needed (up to 6 for 2-column grid) -->
+							</div>
+
+							<!-- Modals (Hidden Pop-ups) -->
+							<div id="modal-project1" class="modal">
+								<div class="modal-content">
+								<span class="close" onclick="closeModal('project1')">&times;</span>
+								<h2>Turbine Blade Refurbishment</h2>
+								<img src="images/full-blade-before.jpg" alt="Before Scan" /> <!-- Add full images to images/ -->
+								<p><strong>Challenge:</strong> Erosion on blades detected via SIMSCAN. <strong>Solution:</strong> 3D scanned with Creaform MetraSCAN, redesigned in NX CAD. <strong>Impact:</strong> 15% efficiency gain, $50K savings.</p>
+								<p><strong>Tools:</strong> SIMSCAN, NX CAD, MetraSCAN</p>
+								<a href="https://example.com/blade-demo" target="_blank">View Full Case Study</a>
+								</div>
+							</div>
+							<div id="modal-project2" class="modal">
+								<div class="modal-content">
+								<span class="close" onclick="closeModal('project2')">&times;</span>
+								<h2>Component Reverse-Engineering</h2>
+								<img src="images/full-component.jpg" alt="Reverse-Engineered Model" />
+								<p><strong>Challenge:</strong> Legacy part wear. <strong>Solution:</strong> PMI verification, modeled in PTC Creo. <strong>Impact:</strong> 20% downtime reduction.</p>
+								<p><strong>Tools:</strong> PMI, PTC Creo, Solidworks</p>
+								<a href="https://example.com/component-demo" target="_blank">View Full Case Study</a>
+								</div>
+							</div>
+							<div id="modal-project3" class="modal">
+								<div class="modal-content">
+								<span class="close" onclick="closeModal('project3')">&times;</span>
+								<h2>Assembly Optimization</h2>
+								<img src="images/full-assembly.jpg" alt="Optimized Assembly" />
+								<p><strong>Challenge:</strong> Vibration issues. <strong>Solution:</strong> Bore gauge data in Solidworks sims. <strong>Impact:</strong> 10% vibration drop.</p>
+								<p><strong>Tools:</strong> Bore gauges, Solidworks, AutoCAD</p>
+								<a href="https://example.com/assembly-demo" target="_blank">View Full Case Study</a>
+								</div>
+							</div>
 							</article>
 
 						<!-- About -->
