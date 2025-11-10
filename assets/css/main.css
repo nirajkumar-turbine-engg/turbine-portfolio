@@ -1766,3 +1766,18 @@ input, select, textarea {
 		.cert-card p { margin-bottom: 0.5rem; font-style: italic; }
 		.cert-card a { color: #007BFF; text-decoration: none; font-weight: bold; }
 		.cert-card a:hover { text-decoration: underline; }
+		.featured-projects .row { margin: 0; }
+		.featured-card {
+		cursor: pointer;
+		transition: transform 0.3s;
+		}
+		.featured-card:hover {
+		transform: scale(1.05);
+		}
+		.featured-card h4 {
+		margin-top: 1rem;
+		margin-bottom: 0.5rem;
+		}
+		.featured-card p {
+		margin-bottom: 1rem;
+		}
