@@ -1112,6 +1112,7 @@ input, select, textarea {
 		-ms-transform: scale(1.0);
 		transform: scale(1.0);
 		-webkit-backface-visibility: hidden;
+		backface-visibility: hidden;
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -1685,10 +1686,11 @@ input, select, textarea {
 		}
 
 		.progress-fill {
-		height: 100%;
-		background-color: #007BFF;
-		border-radius: 10px;
-		transition: width 1s ease-in-out; /* Smooth animation */
+		  animation: linearFill 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+		}
+		@keyframes linearFill {
+		from { width: 0; }
+		to { width: var(--progress-width, 90%); }  /* Set per bar: style="--progress-width: 90%;" */
 		}
 
 		.proficiency {
@@ -1780,4 +1782,27 @@ input, select, textarea {
 		}
 		.featured-card p {
 		margin-bottom: 1rem;
+		}
+		.circular-bar {
+		width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#007BFF var(--progress-angle, 324deg), #e9ecef 0deg); /* 90% = 324deg (360*0.9) */
+		}
+		.stepped-bar {
+		display: flex; height: 20px; background: #e9ecef;
+		}
+		.step-fill { transition: width 0.5s; }
+		.step1 { background: #28a745; width: 33%; animation-delay: 0s; }
+		.step2 { background: #ffc107; width: 33%; animation-delay: 0.5s; }
+		.step3 { background: #007BFF; width: 34%; animation-delay: 1s; }
+		@keyframes stepFill { from { width: 0; } }
+		.wave-bar {
+		height: 20px; background: #e9ecef; overflow: hidden; position: relative;
+		}
+		.wave-fill {
+		width: var(--progress-width, 90%); height: 100%; background: #007BFF;
+		animation: wave 2s ease-in-out;
+		}
+		@keyframes wave {
+		0% { clip-path: polygon(0 0, 0 100%, 0 100%, 0 0); }
+		50% { clip-path: polygon(0 0, 30% 0, 70% 100%, 0 100%); }
+		100% { clip-path: polygon(0 0, var(--progress-width) 0, var(--progress-width) 100%, 0 100%); }
 		}
