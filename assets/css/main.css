@@ -1754,3 +1754,15 @@ input, select, textarea {
 		.timeline-item:nth-child(odd)::after {
 		left: -16px;
 		}
+		.certifications-grid .row { margin: 0; }
+		.cert-card {
+		background: #f8f9fa;
+		padding: 1rem;
+		border-radius: 8px;
+		margin-bottom: 1rem;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+		}
+		.cert-card h4 { margin-bottom: 0.5rem; color: #007BFF; }
+		.cert-card p { margin-bottom: 0.5rem; font-style: italic; }
+		.cert-card a { color: #007BFF; text-decoration: none; font-weight: bold; }
+		.cert-card a:hover { text-decoration: underline; }
