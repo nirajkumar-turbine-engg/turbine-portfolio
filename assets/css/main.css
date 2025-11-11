@@ -1806,3 +1806,27 @@ input, select, textarea {
 		50% { clip-path: polygon(0 0, 30% 0, 70% 100%, 0 100%); }
 		100% { clip-path: polygon(0 0, var(--progress-width) 0, var(--progress-width) 100%, 0 100%); }
 		}
+
+.circular-bar {
+  width: 100px; height: 100px; border-radius: 50%; background: conic-gradient(#007BFF var(--progress-angle, 324deg), #e9ecef 0deg); /* 90% = 324deg (360*0.9) */
+}
+.stepped-bar {
+  display: flex; height: 20px; background: #e9ecef;
+}
+.step-fill { transition: width 0.5s; }
+.step1 { background: #28a745; width: 33%; animation-delay: 0s; }
+.step2 { background: #ffc107; width: 33%; animation-delay: 0.5s; }
+.step3 { background: #007BFF; width: 34%; animation-delay: 1s; }
+@keyframes stepFill { from { width: 0; } }
+.wave-bar {
+  height: 20px; background: #e9ecef; overflow: hidden; position: relative;
+}
+.wave-fill {
+  width: var(--progress-width, 90%); height: 100%; background: #007BFF;
+  animation: wave 2s ease-in-out;
+}
+@keyframes wave {
+  0% { clip-path: polygon(0 0, 0 100%, 0 100%, 0 0); }
+  50% { clip-path: polygon(0 0, 30% 0, 70% 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, var(--progress-width) 0, var(--progress-width) 100%, 0 100%); }
+}
