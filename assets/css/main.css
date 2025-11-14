@@ -1900,3 +1900,52 @@ input, select, textarea {
 .modal-link:hover {
   text-decoration: underline;
 }
+/* ==== CUSTOM THEME ==== */
+:root {
+  --primary: #007BFF;
+  --accent: #FD7E14;
+  --bg-dark: #1a1a1a;
+  --card-bg: #f8f9fa;
+  --success: #28a745;
+}
+
+/* Header & Nav */
+#header { background: var(--bg-dark); }
+nav ul li a:hover { color: var(--accent); }
+
+/* Buttons */
+.button.primary { background: var(--primary); border-color: var(--primary); }
+.button.primary:hover { background: #0056b3; }
+.button.scrolly { background: var(--accent); border-color: var(--accent); }
+.button.scrolly:hover { background: #e96a00; }
+
+/* Progress Bars */
+.progress-fill { background: var(--success); }
+.progress-bar { background: #e9ecef; }
+
+/* Timeline */
+.timeline::before { background: var(--primary); }
+.timeline-item:nth-child(even) .timeline-content::before { border-color: transparent var(--primary) transparent transparent; }
+.timeline-item:nth-child(odd) .timeline-content::before { border-color: transparent transparent transparent var(--primary); }
+
+/* Modal */
+.custom-modal { background: rgba(26,26,26,0.95); }
+.modal-content { background: var(--card-bg); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+.modal-link { color: var(--primary); }
+
+/* Certifications */
+.cert-card { 
+  background: #fff; 
+  border-left: 4px solid var(--accent); 
+  transition: transform .2s, box-shadow .2s;
+}
+.cert-card:hover { 
+  transform: translateY(-4px); 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1); 
+}
+
+/* Featured Projects */
+.featured-card:hover { 
+  transform: scale(1.03); 
+  box-shadow: 0 8px 20px rgba(0,123,255,0.2); 
+}

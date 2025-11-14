@@ -20,6 +20,11 @@
 
 		<!-- Heroicons (SVG icons) -->
 		<script src="https://unpkg.com/heroicons@2.0.18/24/outline/index.js"></script>
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<meta name="description" content="Niraj Kumar Maurya – Turbine Refurbishment Engineer | NX CAD, PTC Creo, 3D Scanning Expert">
+		<meta property="og:title" content="Niraj Kumar Maurya – Turbine Engineer">
+		<meta property="og:description" content="Expert in turbine refurbishing, CAD design, and 3D scanning.">
+		<meta property="og:image" content="images/headshot.jpg">
 	</head>
 
 	<body class="is-preload">
@@ -402,6 +407,27 @@
 			.modal-link { color:#007BFF; text-decoration:none; font-weight:bold; }
 			.modal-link:hover { text-decoration:underline; }
 		</style>
+		<script>
+		// Trigger Heroicons (if using)
+		if (typeof heroicons !== 'undefined') heroicons.replace();
+
+		// Animate elements on scroll
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.style.opacity = '1';
+				entry.target.style.transform = 'translateY(0)';
+			}
+			});
+		}, { threshold: 0.1 });
+
+		document.querySelectorAll('article > *').forEach(el => {
+			el.style.opacity = '0';
+			el.style.transform = 'translateY(20px)';
+			el.style.transition = 'opacity .6s ease, transform .6s ease';
+			observer.observe(el);
+		});
+		</script>
 
 	</body>
 </html>
