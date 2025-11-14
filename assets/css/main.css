@@ -1949,3 +1949,59 @@ nav ul li a:hover { color: var(--accent); }
   transform: scale(1.03); 
   box-shadow: 0 8px 20px rgba(0,123,255,0.2); 
 }
+/* ==== DARK MODE ==== */
+html.dark-mode {
+  --primary: #4dabf7;
+  --accent: #ffa726;
+  --bg-dark: #121212;
+  --card-bg: #1e1e1e;
+  --text: #e0e0e0;
+  --text-muted: #aaaaaa;
+  --border: #333;
+}
+
+html.dark-mode body { background: #0a0a0a; color: var(--text); }
+html.dark-mode #header,
+html.dark-mode #footer { background: var(--bg-dark); }
+html.dark-mode .content,
+html.dark-mode .inner,
+html.dark-mode article { background: transparent; }
+html.dark-mode .major { color: #fff; }
+html.dark-mode p { color: var(--text-muted); }
+html.dark-mode a { color: var(--primary); }
+html.dark-mode a:hover { color: var(--accent); }
+
+html.dark-mode .button.primary { background: var(--primary); }
+html.dark-mode .button.scrolly { background: var(--accent); }
+
+html.dark-mode .progress-bar { background: #333; }
+html.dark-mode .progress-fill { background: #4caf50; }
+
+html.dark-mode .cert-card,
+html.dark-mode .modal-content { background: #252525; color: var(--text); border-color: var(--accent); }
+html.dark-mode .cert-card a { color: var(--primary); }
+
+html.dark-mode .custom-modal { background: rgba(0,0,0,0.9); }
+
+/* Toggle Button */
+#theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+  width: 50px; height: 50px;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+#theme-toggle:hover {
+  transform: scale(1.1);
+  background: rgba(0,0,0,0.9);
+}
+html.dark-mode #theme-toggle { background: rgba(255,255,255,0.2); color: #ffd43b; }
