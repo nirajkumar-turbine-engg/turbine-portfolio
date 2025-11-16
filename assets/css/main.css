@@ -2005,3 +2005,18 @@ html.dark-mode .custom-modal { background: rgba(0,0,0,0.9); }
   background: rgba(0,0,0,0.9);
 }
 html.dark-mode #theme-toggle { background: rgba(255,255,255,0.2); color: #ffd43b; }
+/* Keyboard focus visibility */
+.project-thumb:focus,
+.close-modal:focus {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Improve close button */
+.close-modal {
+  transition: color 0.2s ease;
+}
+.close-modal:hover,
+.close-modal:focus {
+  color: var(--accent) !important;
+}

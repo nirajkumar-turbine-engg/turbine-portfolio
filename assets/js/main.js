@@ -202,21 +202,73 @@
 
 /* ==================== CUSTOM FEATURES (AFTER TEMPLATE) ==================== */
 
-// === 1. MODAL FUNCTIONS ===
+// === 1. MODAL FUNCTIONS + KEYBOARD NAVIGATION ===
+let currentModal = null;
+
 function openModal(id) {
-	var modal = document.getElementById('modal-' + id);
-	if (modal) modal.style.display = 'block';
-}
-function closeModal(id) {
-	var modal = document.getElementById('modal-' + id);
-	if (modal) modal.style.display = 'none';
+  const modal = document.getElementById('modal-' + id);
+  if (!modal) return;
+
+  modal.style.display = 'block';
+  currentModal = modal;
+
+  // Focus trap setup
+  const focusable = modal.querySelectorAll('button, [href], input, textarea, [tabindex]:not([tabindex="-1"])');
+  const firstFocusable = focusable[0];
+  const lastFocusable = focusable[focusable.length - 1];
+
+  // Auto-focus first interactive element
+  if (firstFocusable) firstFocusable.focus();
+
+  // Trap Tab inside modal
+  const handleTab = (e) => {
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else {
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+  };
+
+  modal.addEventListener('keydown', handleTab);
+  modal._tabHandler = handleTab; // store for cleanup
 }
 
-// Close modal when clicking outside (fixed class name)
-window.addEventListener('click', function(event) {
-	if (event.target.classList.contains('custom-modal')) {
-		event.target.style.display = 'none';
-	}
+function closeModal(id) {
+  const modal = document.getElementById('modal-' + id);
+  if (!modal) return;
+
+  modal.style.display = 'none';
+  if (currentModal === modal) currentModal = null;
+
+  // Clean up
+  if (modal._tabHandler) {
+    modal.removeEventListener('keydown', modal._tabHandler);
+    delete modal._tabHandler;
+  }
+}
+
+// Close with Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && currentModal) {
+    const id = currentModal.id.replace('modal-', '');
+    closeModal(id);
+  }
+});
+
+// Close when clicking outside
+window.addEventListener('click', function(e) {
+  if (e.target.classList.contains('custom-modal')) {
+    const id = e.target.id.replace('modal-', '');
+    closeModal(id);
+  }
 });
 
 // === 2. HEROICONS (safe init) ===
@@ -266,4 +318,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
 		if (!localStorage.getItem('theme')) applyTheme(e.matches);
 	});
+});
+// === KEYBOARD SHORTCUT: Ctrl + K → Jump to Projects ===
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && e.key === 'k') {
+    e.preventDefault();
+    document.querySelector('#work').scrollIntoView({ behavior: 'smooth' });
+  }
 });

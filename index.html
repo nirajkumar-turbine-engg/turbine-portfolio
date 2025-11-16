@@ -151,36 +151,61 @@
 
 					<div class="row">
 						<div class="6u project-item">
-							<img src="images/project1-thumb.jpg" alt="Blade Refurb Project"
-							     class="project-thumb" onclick="openModal('project1')">
+							<img src="images/project1-thumb.jpg"
+								 alt="Blade Refurb Project"
+							     class="project-thumb"
+								 role="button"
+								 tabindex="0"
+								 onkeydown="if(event.key==='Enter' || event.key===' ' ) openModal('project1')">
+								 aria-label="Open details for Turbine Blade Refurbishment project">
 							<h3>Turbine Blade Refurbishment</h3>
 							<p>Reverse-engineered worn blades using MetraSCAN; redesigned in NX CAD for 15% flow improvement.</p>
 						</div>
 
 						<div class="6u project-item">
-							<img src="images/project2-thumb.jpg" alt="Component Optimization"
-							     class="project-thumb" onclick="openModal('project2')">
+							<img src="images/project2-thumb.jpg" 
+								 alt="Component Optimization"
+							     class="project-thumb" 
+								 role="button"
+								 tabindex="0"
+								 onkeydown="if(event.key==='Enter' || event.key===' ' ) openModal('project2')">
+								 aria-label="Open details for Turbine Blade Refurbishment project">
 							<h3>Component Reverse-Engineering</h3>
 							<p>PMI analysis on high-wear parts; modeled in PTC Creo for prototype fabrication, reducing downtime by 20%.</p>
 						</div>
 
 						<div class="6u project-item">
-							<img src="images/project3-thumb.jpg" alt="Assembly Optimization"
-							     class="project-thumb" onclick="openModal('project3')">
+							<img src="images/project3-thumb.jpg"
+								 alt="Assembly Optimization"
+							     class="project-thumb"
+								 role="button"
+								 tabindex="0"
+								 onkeydown="if(event.key==='Enter' || event.key===' ' ) openModal('project3')">
+								 aria-label="Open details for Turbine Blade Refurbishment project">
 							<h3>Assembly Optimization</h3>
 							<p>Bore gauge measurements informed Solidworks sims; optimized turbine assembly for 10% vibration reduction.</p>
 						</div>
 
 						<div class="6u project-item">
-							<img src="images/project4-thumb.jpg" alt="Material Verification"
-							     class="project-thumb" onclick="openModal('project4')">
+							<img src="images/project4-thumb.jpg"
+								 alt="Material Verification"
+							     class="project-thumb"
+								 role="button"
+								 tabindex="0"
+								 onkeydown="if(event.key==='Enter' || event.key===' ' ) openModal('project4')">
+								 aria-label="Open details for Turbine Blade Refurbishment project">
 							<h3>Material Verification &amp; Upgrade</h3>
 							<p>Hardness testing and PMI on legacy components; upgraded in AutoCAD for enhanced durability, extending life by 25%.</p>
 						</div>
 
 						<div class="6u project-item">
-							<img src="images/project5-thumb.jpg" alt="Full Turbine Scan"
-							     class="project-thumb" onclick="openModal('project5')">
+							<img src="images/project5-thumb.jpg" 
+								 alt="Full Turbine Scan"
+							     class="project-thumb" 
+								 role="button"
+								 tabindex="0"
+								 onkeydown="if(event.key==='Enter' || event.key===' ' ) openModal('project5')">
+								 aria-label="Open details for Turbine Blade Refurbishment project">
 							<h3>Full Turbine Scanning &amp; Analysis</h3>
 							<p>Comprehensive SIMSCAN and BlackElite scan of complete unit; integrated with Vx element for digital twin creation.</p>
 						</div>
@@ -189,7 +214,14 @@
 					<!-- Modals -->
 					<div id="modal-project1" class="custom-modal">
 						<div class="modal-content">
-							<span class="close-modal" onclick="closeModal('project1')">&times;</span>
+							<span class="close-modal"
+								onclick="closeModal('project1')"
+								role="button"
+								tabindex="0"
+								aria-label="Close modal"
+								onkeydown="if(event.key==='Enter' || event.key===' ') closeModal('project1')">
+							×
+							</span>
 							<h2>Turbine Blade Refurbishment</h2>
 							<img src="images/project1-full.jpg" alt="Blade Before/After" class="modal-img">
 							<p><strong>Challenge:</strong> Erosion on blades detected via SIMSCAN.</p>
@@ -202,7 +234,14 @@
 
 					<div id="modal-project2" class="custom-modal">
 						<div class="modal-content">
-							<span class="close-modal" onclick="closeModal('project2')">&times;</span>
+							<span class="close-modal"
+								onclick="closeModal('project2')"
+								role="button"
+								tabindex="0"
+								aria-label="Close modal"
+								onkeydown="if(event.key==='Enter' || event.key===' ') closeModal('project2')">
+							×
+							</span>
 							<h2>Component Reverse-Engineering</h2>
 							<img src="images/project2-full.jpg" alt="Component Model" class="modal-img">
 							<p><strong>Challenge:</strong> Legacy part wear.</p>
@@ -215,7 +254,14 @@
 
 					<div id="modal-project3" class="custom-modal">
 						<div class="modal-content">
-							<span class="close-modal" onclick="closeModal('project3')">&times;</span>
+							<span class="close-modal"
+								onclick="closeModal('project3')"
+								role="button"
+								tabindex="0"
+								aria-label="Close modal"
+								onkeydown="if(event.key==='Enter' || event.key===' ') closeModal('project3')">
+							×
+							</span>
 							<h2>Assembly Optimization</h2>
 							<img src="images/project3-full.jpg" alt="Assembly Render" class="modal-img">
 							<p><strong>Challenge:</strong> Vibration issues.</p>
@@ -228,7 +274,14 @@
 
 					<div id="modal-project4" class="custom-modal">
 						<div class="modal-content">
-							<span class="close-modal" onclick="closeModal('project4')">&times;</span>
+							<span class="close-modal"
+								onclick="closeModal('project4')"
+								role="button"
+								tabindex="0"
+								aria-label="Close modal"
+								onkeydown="if(event.key==='Enter' || event.key===' ') closeModal('project4')">
+							×
+							</span>
 							<h2>Material Verification &amp; Upgrade</h2>
 							<img src="images/project4-full.jpg" alt="Material Analysis" class="modal-img">
 							<p><strong>Challenge:</strong> Degraded material integrity.</p>
@@ -241,7 +294,14 @@
 
 					<div id="modal-project5" class="custom-modal">
 						<div class="modal-content">
-							<span class="close-modal" onclick="closeModal('project5')">&times;</span>
+							<span class="close-modal"
+								onclick="closeModal('project5')"
+								role="button"
+								tabindex="0"
+								aria-label="Close modal"
+								onkeydown="if(event.key==='Enter' || event.key===' ') closeModal('project5')">
+							×
+							</span>
 							<h2>Full Turbine Scanning &amp; Analysis</h2>
 							<img src="images/project5-full.jpg" alt="Turbine Scan" class="modal-img">
 							<p><strong>Challenge:</strong> Comprehensive unit assessment.</p>
@@ -408,24 +468,54 @@
 			.modal-link:hover { text-decoration:underline; }
 		</style>
 		<script>
-		// Trigger Heroicons (if using)
+		// === 1. HEROICONS INIT ===
 		if (typeof heroicons !== 'undefined') heroicons.replace();
 
-		// Animate elements on scroll
-		const observer = new IntersectionObserver((entries) => {
+		// === 2. SMOOTH SCROLL + REVEAL ANIMATIONS ===
+		const easeInOutCubic = 'cubic-bezier(0.65, 0, 0.35, 1)';
+		const revealObserver = new IntersectionObserver((entries) => {
 			entries.forEach(entry => {
 			if (entry.isIntersecting) {
 				entry.target.style.opacity = '1';
 				entry.target.style.transform = 'translateY(0)';
+				revealObserver.unobserve(entry.target);
 			}
 			});
-		}, { threshold: 0.1 });
+		}, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
-		document.querySelectorAll('article > *').forEach(el => {
+		document.querySelectorAll('article > *').forEach((el, i) => {
 			el.style.opacity = '0';
-			el.style.transform = 'translateY(20px)';
-			el.style.transition = 'opacity .6s ease, transform .6s ease';
-			observer.observe(el);
+			el.style.transform = 'translateY(30px)';
+			el.style.transition = `opacity 0.8s ${easeInOutCubic} ${i * 0.1}s, transform 0.8s ${easeInOutCubic} ${i * 0.1}s`;
+			revealObserver.observe(el);
+		});
+
+		// === 3. DARK MODE TOGGLE ===
+		const toggleBtn = document.createElement('button');
+		toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+		toggleBtn.id = 'theme-toggle';
+		toggleBtn.setAttribute('aria-label', 'Toggle dark mode');
+		document.body.appendChild(toggleBtn);
+
+		const updateTheme = (isDark) => {
+			document.documentElement.classList.toggle('dark-mode', isDark);
+			toggleBtn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		};
+
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		const savedTheme = localStorage.getItem('theme');
+		const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+		updateTheme(isDark);
+
+		toggleBtn.addEventListener('click', () => {
+			updateTheme(!document.documentElement.classList.contains('dark-mode'));
+		});
+
+		// Optional: Sync with system preference change
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+			if (!localStorage.getItem('theme')) updateTheme(e.matches);
 		});
 		</script>
 
